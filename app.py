@@ -24,7 +24,6 @@ class SimulacionMonteCarlo:
         return (self.numerador)/(np.exp(a)+np.exp(-1*a))
 
     def _simular_desde_uniforme(self) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-        """Retorna: x_valores, alturas, areas"""
         x_valores = []
         alturas = []
         for _ in range(self.n_iteraciones):
@@ -42,8 +41,7 @@ class SimulacionMonteCarlo:
         return x_valores, alturas, areas
 
     def _simular_infinito(self) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-        """Usa transformación sinh para mapear (-∞, +∞) a (-1, 1)
-        Retorna: x_valores, alturas, areas"""
+        # Usar transformación
         x_valores = []
         alturas = []
         for _ in range(self.n_iteraciones):
@@ -59,7 +57,6 @@ class SimulacionMonteCarlo:
         return x_valores, alturas, areas
 
     def ejecutar(self) -> tuple[float, np.ndarray, np.ndarray, np.ndarray]:
-        """Retorna: integral, x_valores, alturas, areas"""
         if self.es_infinito:
             x_valores, alturas, areas = self._simular_infinito()
             integral = float(np.sum(areas))
