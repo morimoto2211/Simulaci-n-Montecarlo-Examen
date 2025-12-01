@@ -71,8 +71,8 @@ class SimulacionMonteCarlo:
 # APP
 
 def main():
-    st.set_page_config(page_title="Simulación Monte Carlo", layout="centered")
-    st.title("Simulación Monte Carlo del área bajo la curva")
+    st.set_page_config(page_title="Simulación Montecarlo", layout="centered")
+    st.title("Simulación Montecarlo del área bajo la curva")
 
     st.markdown(
         """
@@ -142,7 +142,7 @@ def main():
 
     if st.button("Ejecutar simulación"):
         try:
-            # Ejecutar simulación de Monte Carlo
+            # Ejecutar simulación de Montecarlo
             simulador = SimulacionMonteCarlo(
                 n_iteraciones=int(n_iteraciones),
                 lim_inf=int(lim_inf) if not es_infinito else -np.inf,
@@ -155,7 +155,7 @@ def main():
 
             st.subheader("Resultados de la simulación")
             
-            # Mostrar la estimación de Monte Carlo
+            # Mostrar la estimación de Montecarlo
             col1 = st.columns(1)
             with col1[0]:
                 st.metric("Estimación de la integral", f"{integral:.6f}")
