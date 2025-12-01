@@ -99,7 +99,7 @@ def main():
 
     # Definir parámetro de la función
     numerador = st.sidebar.number_input(
-        "Parámetro de la función",
+        "Parámetro de la función (numerador)",
         min_value=1,
         max_value=2,
         value=1,
